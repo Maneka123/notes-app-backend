@@ -15,3 +15,6 @@ server.js
 .gitignore
 models/User.js
 models/Note.js
+
+
+004]how to run : node server.js
