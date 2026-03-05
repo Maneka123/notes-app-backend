@@ -5,3 +5,5 @@
 003]useful files server.js .env .gitignore models/User.js models/Note.js
 
 004]git repo-https://github.com/Maneka123/notes-app-backend.git
+
+005]how to run : node server.js
