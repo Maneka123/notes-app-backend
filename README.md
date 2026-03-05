@@ -1,1 +1,17 @@
 # notes-app-backend
+
+001] project setup
+npm init -y
+npm install express mongoose bcrypt jsonwebtoken cookie-parser cors dotenv
+
+002]env variables
+MONGO_URI=mongodb+srv://maneka:maneka123@mycluster.gpttvfg.mongodb.net/my-notes?retryWrites=true&w=majority
+JWT_SECRET=supersecretkey123456789
+PORT=5000
+
+003]useful files
+server.js
+.env
+.gitignore
+models/User.js
+models/Note.js
