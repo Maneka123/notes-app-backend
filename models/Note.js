@@ -1,11 +1,17 @@
-const mongoose = require("mongoose")
+// models/Note.js
+const mongoose = require("mongoose");
 
-const noteSchema = new mongoose.Schema({
-  title: String,
-  content: String,
-  ownerId: String,
-  addedBy: String,
-  permission: { type: String, default: "edit" }
-})
+const CollaboratorSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  permission: { type: String, enum: ["view", "edit"], default: "view" },
+  addedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+});
 
-module.exports = mongoose.model("Note", noteSchema)
+const NoteSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  content: { type: String, required: true },
+  ownerId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  collaborators: [CollaboratorSchema],
+});
+
+module.exports = mongoose.model("Note", NoteSchema);
