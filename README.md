@@ -1,7 +1,7 @@
 # notes-app-backend
 
 001] project setup
-npm init -y
+npm init -y /
 npm install express mongoose bcrypt jsonwebtoken cookie-parser cors dotenv
 
 002]env variables
