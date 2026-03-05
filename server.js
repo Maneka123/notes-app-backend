@@ -195,7 +195,22 @@ app.delete("/api/notes/:id", authMiddleware, async (req, res) => {
   }
 });
 
+// GET NOTES SHARED WITH ME
+app.get("/api/notes/shared", authMiddleware, async (req, res) => {
+    const notes = await Note.find({ addedBy: req.user.id, permission: "view" })
+    res.json(notes)
+})
 
+// GET ALL USERS (except yourself)
+app.get("/api/users", authMiddleware, async (req, res) => {
+  try {
+    const users = await User.find({ _id: { $ne: req.user.id } }).select("_id name email");
+    res.json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
 
 // =========================
 // START SERVER
