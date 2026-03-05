@@ -3,3 +3,5 @@
 002]env variables MONGO_URI=mongodb+srv://maneka:maneka123@mycluster.gpttvfg.mongodb.net/my-notes?retryWrites=true&w=majority JWT_SECRET=supersecretkey123456789 PORT=5000
 
 003]useful files server.js .env .gitignore models/User.js models/Note.js
+
+004]git repo-https://github.com/Maneka123/notes-app-backend.git
